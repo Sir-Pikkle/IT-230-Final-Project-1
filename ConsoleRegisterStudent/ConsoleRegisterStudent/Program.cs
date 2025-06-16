@@ -1,4 +1,10 @@
-﻿using System;
+/*
+* Joseph Dick
+* IT-230
+* Final Project 1
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
