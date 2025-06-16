@@ -29,7 +29,7 @@ namespace ConsoleRegisterStudent
 
             System.Console.WriteLine("Joseph's Copy");
 
-            do
+            do // Main part of program that runs until quit is chosen.
             {
                 WritePrompt();
                 choice = Convert.ToInt32(Console.ReadLine());
@@ -68,16 +68,15 @@ namespace ConsoleRegisterStudent
             Console.ReadKey();
         }
 
-        void WritePrompt()
+        void WritePrompt() // Starts the program and runs each time it is rerun to select another class.
         {
             Console.WriteLine("Please select a course for which you want to register by typing the number inside []");
             Console.WriteLine("[1]IT 145\n[2]IT 200\n[3]IT 201\n[4]IT 270\n[5]IT 315\n[6]IT 328\n[7]IT 330");
             Console.Write("Enter your choice : ");
         }
 
-        int ValidateChoice(int choice, int firstChoice, int secondChoice, int thirdChoice, int totalCredit)
+        int ValidateChoice(int choice, int firstChoice, int secondChoice, int thirdChoice, int totalCredit) // Error catching code
         {
-            // Changed choice > 70 to 7, changed && operators to || operator, changed totalCredit operator to ==.
             if (choice < 1 || choice > 7)
                 return -1;
             else if (choice == firstChoice || choice == secondChoice || choice == thirdChoice)
@@ -88,7 +87,7 @@ namespace ConsoleRegisterStudent
         }
 
 
-        void WriteCurrentRegistration(int firstChoice, int secondChoice, int thirdChoice)
+        void WriteCurrentRegistration(int firstChoice, int secondChoice, int thirdChoice) // Writes to the console the selected courses.
         {
             if (secondChoice == 0)
                 Console.WriteLine("You are currently registered for {0}", ChoiceToCourse(firstChoice));
@@ -98,7 +97,7 @@ namespace ConsoleRegisterStudent
                 Console.WriteLine("You are currently registered for {0}, {1}, {2}", ChoiceToCourse(firstChoice), ChoiceToCourse(secondChoice), ChoiceToCourse(thirdChoice));
         }
 
-        string ChoiceToCourse(int choice)
+        string ChoiceToCourse(int choice) // Switch case to choose courses.
         {
             string course = "";
             switch (choice)
